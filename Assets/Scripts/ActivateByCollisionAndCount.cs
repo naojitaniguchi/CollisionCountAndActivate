@@ -33,4 +33,20 @@ public class ActivateByCollisionAndCount : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            count++;
+            if (count >= flowchatrs.Length)
+            {
+                flowchatrs[0].SetActive(true);
+            }
+            else
+            {
+                flowchatrs[count].SetActive(true);
+            }
+        }
+    }
 }
